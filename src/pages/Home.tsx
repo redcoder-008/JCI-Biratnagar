@@ -11,40 +11,42 @@ import { eventsData } from '../data/events';
 import { newsData } from '../data/news';
 import { projectsData } from '../data/projects';
 import { galleryData } from '../data/gallery';
-import { Users, Briefcase, Calendar as CalendarIcon, Award } from 'lucide-react';
+import { ArrowRight, Users, Briefcase, Calendar as CalendarIcon, Award } from 'lucide-react';
 import avatarPlaceholder from '../assets/avatars/avatar-placeholder.svg';
 import activityPlaceholder from '../assets/activity-placeholder.svg';
+import logo from '../assets/branding/jci-biratnagar-logo.png';
 
 const Home: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-jci-dark min-h-[80vh] flex items-center select-none">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={activityPlaceholder}
-            alt="Abstract JCI Biratnagar visual"
-            className="w-full h-full object-cover opacity-30"
-          />
-        </div>
-        <div className="section-container relative z-10 py-20 text-center text-white">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-jci-gold/20 text-jci-gold font-bold text-sm tracking-wider uppercase mb-6 border border-jci-gold/30">
-            JCI Biratnagar
-          </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-            Developing Leaders.<br />
-            <span className="text-jci-gold">Creating Impact.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Empowering young people to create positive change in their communities and beyond through leadership development and meaningful action.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/membership" className="btn-primary w-full sm:w-auto text-lg px-8">
-              Join JCI
-            </Link>
-            <Link to="/events" className="btn-secondary w-full sm:w-auto text-lg px-8 border-white text-white hover:bg-white hover:text-jci-blue">
-              Explore Our Activities
-            </Link>
+      <section className="hero-shell relative isolate flex min-h-[660px] items-center overflow-hidden bg-[#15396C] text-white sm:min-h-[715px]">
+        <div className="hero-grid absolute inset-0 opacity-40" aria-hidden="true" />
+        <div className="hero-orb absolute -right-40 top-1/2 h-[37rem] w-[37rem] -translate-y-1/2 rounded-full border border-white/15" aria-hidden="true" />
+        <div className="hero-orb hero-orb-delayed absolute -right-16 top-1/2 h-[27rem] w-[27rem] -translate-y-1/2 rounded-full border border-jci-gold/35" aria-hidden="true" />
+        <div className="hero-wave absolute inset-x-0 bottom-0 h-44 opacity-70" aria-hidden="true" />
+        <div className="section-container relative z-10 grid items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
+          <div className="max-w-3xl">
+            <div className="hero-enter hero-enter-1 mb-6 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-jci-gold">
+              <span className="h-px w-10 bg-jci-gold" /> JCI Biratnagar
+            </div>
+            <h1 className="hero-enter hero-enter-2 mb-7 text-5xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Developing Tomorrow's Leaders for a Better <span className="text-jci-gold">Biratnagar.</span>
+            </h1>
+            <p className="hero-enter hero-enter-3 mb-9 max-w-xl text-lg leading-relaxed text-blue-100 sm:text-xl">
+              A community of young active citizens building leadership, friendship, and meaningful positive change.
+            </p>
+            <div className="hero-enter hero-enter-4 flex flex-col gap-4 sm:flex-row">
+              <Link to="/membership" className="btn-primary gap-2 px-7 py-3.5 text-lg">Join Us <Users size={19} /></Link>
+              <Link to="/about" className="inline-flex items-center justify-center gap-2 rounded-md border border-white/45 px-7 py-3.5 text-lg font-semibold text-white transition-colors hover:border-white hover:bg-white/10">Learn More <ArrowRight size={19} /></Link>
+            </div>
+          </div>
+          <div className="hero-enter hero-enter-3 relative mx-auto w-full max-w-[15rem] sm:max-w-md lg:max-w-xl">
+            <div className="absolute inset-4 rounded-full bg-jci-gold/20 blur-3xl" aria-hidden="true" />
+            <div className="hero-brand relative mx-auto aspect-square max-w-[29rem] overflow-hidden rounded-full border border-white/20 bg-[#0798d1] p-7 shadow-2xl shadow-black/30">
+              <img src={logo} alt="JCI Biratnagar" className="h-full w-full rounded-full object-cover" />
+            </div>
+            <div className="absolute -bottom-4 left-0 rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white backdrop-blur-sm">Developing Leaders. Creating Impact.</div>
           </div>
         </div>
       </section>

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'jci-blue': '#2a4b8d',
+        'jci-blue': '#15396C',
         'jci-gold': '#f5a623',
         'jci-dark': '#1a1a1a',
       },

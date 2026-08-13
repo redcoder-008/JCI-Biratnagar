@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import logo from '../assets/branding/jci-biratnagar-logo.png';
 
 const Footer: React.FC = () => {
   return (
@@ -9,9 +10,7 @@ const Footer: React.FC = () => {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           
           <div className="lg:col-span-1">
-            <div className="text-2xl font-bold text-white tracking-tight mb-4">
-              JCI <span className="text-jci-gold">Biratnagar</span>
-            </div>
+            <img src={logo} alt="JCI Biratnagar" className="mb-5 h-16 w-16 rounded-lg object-cover" />
             <p className="text-sm leading-relaxed text-gray-400">
               A local chapter of Junior Chamber International, empowering young people to create positive change in their communities.
             </p>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Users } from 'lucide-react';
+import { Mail, Menu, X, Users } from 'lucide-react';
 import clsx from 'clsx';
+import logo from '../assets/branding/jci-biratnagar-logo.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,18 +26,18 @@ const Navbar: React.FC = () => {
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="bg-jci-blue text-white text-sm">
         <div className="section-container flex items-center justify-between py-2">
-          <div className="flex items-center gap-4">
-            <span className="font-medium hidden sm:inline">Developing Leaders, Creating Impact</span>
-          </div>
-          <span className="font-medium">[Official Email]</span>
+          <span className="font-medium hidden sm:inline">Developing Leaders, Creating Impact</span>
+          <span className="flex items-center gap-2 font-medium"><Mail size={14} /> [Official Email]</span>
         </div>
       </div>
       
       <nav className="section-container relative">
         <div className="flex items-center justify-between py-3 lg:py-4">
-          <Link to="/" className="flex items-center gap-2" onClick={closeMenu}>
-            <div className="text-2xl font-bold text-jci-blue tracking-tight">
-              JCI <span className="text-jci-gold">Biratnagar</span>
+          <Link to="/" className="flex items-center gap-3" onClick={closeMenu}>
+            <img src={logo} alt="JCI Biratnagar" className="h-12 w-12 rounded-lg object-cover shadow-sm" />
+            <div className="leading-none">
+              <div className="text-xl font-bold tracking-tight text-jci-blue">JCI</div>
+              <div className="mt-1 text-xs font-bold tracking-[0.12em] text-jci-blue">BIRATNAGAR</div>
             </div>
           </Link>
           
