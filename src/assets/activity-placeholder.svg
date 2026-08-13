@@ -1,0 +1,10 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#173B76"/>
+  <path d="M-40 660C160 470 320 790 510 590C700 390 830 500 1240 100" stroke="#F5A623" stroke-width="26" opacity=".85"/>
+  <path d="M-60 710C150 520 330 840 540 640C750 440 910 560 1260 210" stroke="white" stroke-width="4" opacity=".5"/>
+  <circle cx="956" cy="172" r="124" stroke="white" stroke-width="3" opacity=".25"/>
+  <circle cx="956" cy="172" r="78" fill="#F5A623" opacity=".9"/>
+  <path d="M930 172H982M956 146V198" stroke="#173B76" stroke-width="12" stroke-linecap="round"/>
+  <text x="86" y="128" fill="white" font-family="Arial, sans-serif" font-size="35" font-weight="700" letter-spacing="7">JCI BIRATNAGAR</text>
+  <text x="86" y="188" fill="#F5A623" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4">ACTIVITY PLACEHOLDER</text>
+</svg>

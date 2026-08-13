@@ -1,5 +1,5 @@
 import React from 'react';
-import { LeadershipMember } from '../types';
+import type { LeadershipMember } from '../types';
 
 interface LeadershipCardProps {
   member: LeadershipMember;
