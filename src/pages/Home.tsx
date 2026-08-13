@@ -13,23 +13,22 @@ import { projectsData } from '../data/projects';
 import { galleryData } from '../data/gallery';
 import { ArrowRight, Users, Briefcase, Calendar as CalendarIcon, Award } from 'lucide-react';
 import activityPlaceholder from '../assets/activity-placeholder.svg';
-import logo from '../assets/branding/jci-biratnagar-logo.png';
+import heroPresident from '../assets/hero-president.jpg';
 
 const Home: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
       <section className="hero-shell relative isolate flex min-h-[660px] items-center overflow-hidden bg-[#15396C] text-white sm:min-h-[715px]">
-        <div className="hero-grid absolute inset-0 opacity-40" aria-hidden="true" />
-        <div className="hero-orb absolute -right-40 top-1/2 h-[37rem] w-[37rem] -translate-y-1/2 rounded-full border border-white/15" aria-hidden="true" />
-        <div className="hero-orb hero-orb-delayed absolute -right-16 top-1/2 h-[27rem] w-[27rem] -translate-y-1/2 rounded-full border border-jci-gold/35" aria-hidden="true" />
+        <img src={heroPresident} alt="JC Kabiraj Dahal with the Himalayas" className="absolute inset-0 h-full w-full scale-105 object-cover object-[65%_center] opacity-45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#15396C]/95 via-[#15396C]/82 to-[#15396C]/45" aria-hidden="true" />
         <div className="hero-wave absolute inset-x-0 bottom-0 h-44 opacity-70" aria-hidden="true" />
-        <div className="section-container relative z-10 grid items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
-          <div className="max-w-3xl">
+        <div className="section-container relative z-10 py-20 sm:py-24 lg:py-28">
+          <div className="max-w-2xl">
             <div className="hero-enter hero-enter-1 mb-6 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-jci-gold">
               <span className="h-px w-10 bg-jci-gold" /> JCI Biratnagar
             </div>
-            <h1 className="hero-enter hero-enter-2 mb-7 text-5xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="hero-enter hero-enter-2 mb-7 text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
               Developing Tomorrow's Leaders for a Better <span className="text-jci-gold">Biratnagar.</span>
             </h1>
             <p className="hero-enter hero-enter-3 mb-9 max-w-xl text-lg leading-relaxed text-blue-100 sm:text-xl">
@@ -39,13 +38,6 @@ const Home: React.FC = () => {
               <Link to="/membership" className="btn-primary gap-2 px-7 py-3.5 text-lg">Join Us <Users size={19} /></Link>
               <Link to="/about" className="inline-flex items-center justify-center gap-2 rounded-md border border-white/45 px-7 py-3.5 text-lg font-semibold text-white transition-colors hover:border-white hover:bg-white/10">Learn More <ArrowRight size={19} /></Link>
             </div>
-          </div>
-          <div className="hero-enter hero-enter-3 relative mx-auto w-full max-w-[15rem] sm:max-w-md lg:max-w-xl">
-            <div className="absolute inset-4 rounded-full bg-jci-gold/20 blur-3xl" aria-hidden="true" />
-            <div className="hero-brand relative mx-auto aspect-square max-w-[29rem] overflow-hidden rounded-full border border-white/20 bg-[#0798d1] p-7 shadow-2xl shadow-black/30">
-              <img src={logo} alt="JCI Biratnagar" className="h-full w-full rounded-full object-cover" />
-            </div>
-            <div className="absolute -bottom-4 left-0 rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white backdrop-blur-sm">Developing Leaders. Creating Impact.</div>
           </div>
         </div>
       </section>

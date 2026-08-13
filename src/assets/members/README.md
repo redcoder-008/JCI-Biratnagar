@@ -1,6 +1,10 @@
 # Member photos
 
-Upload member photos to this folder using these filenames:
+This folder is the source copy of the member photos. The website serves the matching files from `public/images/members`.
+
+When replacing a photo, upload the replacement to **both** `src/assets/members` and `public/images/members` using the same filename. The current website will then load it from `/images/members`.
+
+Use these filenames:
 
 - `president.jpg`
 - `executive-vice-president.jpg`
