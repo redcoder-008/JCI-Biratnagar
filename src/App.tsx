@@ -9,6 +9,7 @@ import News from './pages/News';
 import Gallery from './pages/Gallery';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
+import ContentDetail from './pages/ContentDetail';
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="leadership" element={<Leadership />} />
           <Route path="events" element={<Events />} />
+          <Route path="events/:slug" element={<ContentDetail kind="event" />} />
           <Route path="projects" element={<Projects />} />
           <Route path="news" element={<News />} />
+          <Route path="news/:slug" element={<ContentDetail kind="news" />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="membership" element={<Membership />} />
           <Route path="contact" element={<Contact />} />

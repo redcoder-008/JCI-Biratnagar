@@ -13,6 +13,7 @@ import { projectsData } from '../data/projects';
 import { galleryData } from '../data/gallery';
 import { Users, Briefcase, Calendar as CalendarIcon, Award } from 'lucide-react';
 import avatarPlaceholder from '../assets/avatars/avatar-placeholder.svg';
+import activityPlaceholder from '../assets/activity-placeholder.svg';
 
 const Home: React.FC = () => {
   return (
@@ -21,8 +22,8 @@ const Home: React.FC = () => {
       <section className="relative overflow-hidden bg-jci-dark min-h-[80vh] flex items-center select-none">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920" 
-            alt="JCI Biratnagar Hero" 
+            src={activityPlaceholder}
+            alt="Abstract JCI Biratnagar visual"
             className="w-full h-full object-cover opacity-30"
           />
         </div>
@@ -72,8 +73,8 @@ const Home: React.FC = () => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=800" 
-                  alt="About JCI Biratnagar" 
+                  src={activityPlaceholder}
+                  alt="Activity image placeholder"
                   className="w-full h-full object-cover"
                 />
               </div>
