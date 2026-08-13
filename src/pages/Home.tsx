@@ -128,7 +128,7 @@ const Home: React.FC = () => {
             centered 
           />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {leadershipData.slice(0, 5).map(member => (
+            {[...leadershipData].sort((a, b) => (a.position === 'President' ? -1 : b.position === 'President' ? 1 : 0)).slice(0, 5).map(member => (
               <LeadershipCard key={member.id} member={member} />
             ))}
           </div>
