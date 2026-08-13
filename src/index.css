@@ -5,7 +5,6 @@
 @layer base {
   body {
     @apply font-sans text-gray-800 antialiased bg-white;
-    overflow-x: hidden; /* Ensure no horizontal scrolling overall */
   }
 
   h1, h2, h3, h4, h5, h6 {

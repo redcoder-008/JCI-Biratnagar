@@ -4,10 +4,13 @@ import SectionHeading from '../components/SectionHeading';
 import LeadershipCard from '../components/LeadershipCard';
 import EventCard from '../components/EventCard';
 import NewsCard from '../components/NewsCard';
+import ProjectCard from '../components/ProjectCard';
 import StatisticCard from '../components/StatisticCard';
 import { leadershipData } from '../data/leadership';
 import { eventsData } from '../data/events';
 import { newsData } from '../data/news';
+import { projectsData } from '../data/projects';
+import { galleryData } from '../data/gallery';
 import { Users, Briefcase, Calendar as CalendarIcon, Award } from 'lucide-react';
 import avatarPlaceholder from '../assets/avatars/avatar-placeholder.svg';
 
@@ -155,6 +158,23 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <SectionHeading
+            title="Our Projects"
+            subtitle="A space for the initiatives and impact stories of JCI Biratnagar."
+            centered
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectsData.map((project) => <ProjectCard key={project.id} project={project} />)}
+          </div>
+          <div className="mt-12 text-center">
+            <Link to="/projects" className="btn-secondary">Explore All Projects</Link>
+          </div>
+        </div>
+      </section>
+
       {/* News Section */}
       <section className="section-padding bg-white">
         <div className="section-container">
@@ -172,6 +192,29 @@ const Home: React.FC = () => {
             <Link to="/news" className="btn-secondary">
               View More News
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Preview */}
+      <section className="section-padding bg-gray-50">
+        <div className="section-container">
+          <SectionHeading
+            title="Gallery"
+            subtitle="Moments from JCI Biratnagar activities will appear here."
+            centered
+          />
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {galleryData.map((album) => (
+              <Link to="/gallery" key={album.id} className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-jci-dark">
+                <img src={album.coverImage} alt="Activity image placeholder" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-jci-dark/55 transition-colors group-hover:bg-jci-dark/35" />
+                <span className="absolute inset-x-4 bottom-4 text-sm font-bold text-white sm:text-base">{album.title}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link to="/gallery" className="btn-secondary">View Gallery</Link>
           </div>
         </div>
       </section>

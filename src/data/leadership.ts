@@ -1,4 +1,4 @@
-import { LeadershipMember } from '../types';
+import type { LeadershipMember } from '../types';
 import avatarPlaceholder from '../assets/avatars/avatar-placeholder.svg';
 
 export const leadershipData: LeadershipMember[] = [

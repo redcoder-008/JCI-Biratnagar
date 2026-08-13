@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading';
 import { Users, Briefcase, Globe, Award, Target, BookOpen } from 'lucide-react';
 
@@ -68,9 +69,9 @@ const Membership: React.FC = () => {
             <p className="text-blue-100 mb-8 text-lg">
               Membership information will be updated soon. Please contact us directly for current membership details and application process.
             </p>
-            <a href="/contact" className="btn-primary w-full shadow-lg shadow-jci-gold/20 text-lg py-4">
+            <Link to="/contact" className="btn-primary w-full shadow-lg shadow-jci-gold/20 text-lg py-4">
               Contact Us for Details
-            </a>
+            </Link>
           </div>
         </div>
       </div>

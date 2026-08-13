@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -15,20 +15,7 @@ const Footer: React.FC = () => {
             <p className="text-sm leading-relaxed text-gray-400">
               A local chapter of Junior Chamber International, empowering young people to create positive change in their communities.
             </p>
-            <div className="mt-6 flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-jci-gold transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-jci-gold transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-jci-gold transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-jci-gold transition-colors">
-                <Linkedin size={20} />
-              </a>
-            </div>
+            <p className="mt-6 text-sm text-gray-500">Official social links will be added soon.</p>
           </div>
 
           <div>
@@ -69,9 +56,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-400">
                 <Mail size={18} className="text-jci-gold shrink-0" />
-                <a href="mailto:info@jcibiratnagar.org" className="hover:text-jci-gold transition-colors">
-                  [Official Email]
-                </a>
+                <span>[Official Email]</span>
               </li>
             </ul>
           </div>

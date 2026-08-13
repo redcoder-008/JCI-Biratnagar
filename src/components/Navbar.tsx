@@ -28,11 +28,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <span className="font-medium hidden sm:inline">Developing Leaders, Creating Impact</span>
           </div>
-          <div className="flex items-center gap-3">
-            <a href="mailto:info@jcibiratnagar.org" className="hover:text-jci-gold transition-colors">
-              info@jcibiratnagar.org
-            </a>
-          </div>
+          <span className="font-medium">[Official Email]</span>
         </div>
       </div>
       
