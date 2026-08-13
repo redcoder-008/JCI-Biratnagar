@@ -25,7 +25,7 @@ const Membership: React.FC = () => {
 
       <div className="section-container mt-16">
         <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12 mb-16 text-center">
-          <h2 className="text-3xl font-bold text-jci-blue mb-6">Why Join JCI Biratnagar?</h2>
+          <h2 className="text-3xl font-bold text-jci-blue mb-6">Why To Join JCI Biratnagar?</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
             JCI offers a unique platform for young people to develop their leadership skills, social responsibility, entrepreneurship, and fellowship necessary to create positive change.
           </p>
