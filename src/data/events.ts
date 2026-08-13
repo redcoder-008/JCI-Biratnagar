@@ -1,0 +1,40 @@
+import { Event } from '../types';
+
+export const eventsData: Event[] = [
+  {
+    id: '1',
+    title: 'Leadership Development Program',
+    date: '[Event Date]',
+    time: '[Event Time]',
+    location: '[Event Location]',
+    description: 'Empowering young leaders with essential skills to drive positive change in their communities.',
+    organizer: 'JCI Biratnagar',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800',
+    category: 'Upcoming',
+    slug: 'leadership-development-program',
+  },
+  {
+    id: '2',
+    title: 'Community Development Initiative',
+    date: '[Event Date]',
+    time: '[Event Time]',
+    location: '[Event Location]',
+    description: 'A community-focused project aiming to uplift local neighborhoods through volunteer action.',
+    organizer: 'JCI Biratnagar',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+    category: 'Upcoming',
+    slug: 'community-development-initiative',
+  },
+  {
+    id: '3',
+    title: 'Youth Empowerment Workshop',
+    date: '[Event Date]',
+    time: '[Event Time]',
+    location: '[Event Location]',
+    description: 'An interactive workshop designed to inspire and equip the youth with modern career and life skills.',
+    organizer: 'JCI Biratnagar',
+    image: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=800',
+    category: 'Upcoming',
+    slug: 'youth-empowerment-workshop',
+  },
+];

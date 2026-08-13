@@ -1,0 +1,20 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'jci-blue': '#2a4b8d',
+        'jci-gold': '#f5a623',
+        'jci-dark': '#1a1a1a',
+      },
+      fontFamily: {
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+}
