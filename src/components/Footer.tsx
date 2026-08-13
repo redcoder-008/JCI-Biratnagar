@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { ExternalLink, MapPin, Phone, Mail } from 'lucide-react';
 import logo from '../assets/branding/jci-biratnagar-logo.png';
 
 const Footer: React.FC = () => {
@@ -14,7 +14,11 @@ const Footer: React.FC = () => {
             <p className="text-sm leading-relaxed text-gray-400">
               A local chapter of Junior Chamber International, empowering young people to create positive change in their communities.
             </p>
-            <p className="mt-6 text-sm text-gray-500">Official social links will be added soon.</p>
+            <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
+              <a href="https://www.facebook.com/p/Biratnagar-Jaycees-61571983140311/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-gray-400 transition-colors hover:text-jci-gold">Facebook <ExternalLink size={13} /></a>
+              <a href="https://www.instagram.com/biratnagar_junior_jaycees/?hl=en" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-gray-400 transition-colors hover:text-jci-gold">Instagram <ExternalLink size={13} /></a>
+              <a href="https://www.tiktok.com/@biratnagar.jaycee" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-gray-400 transition-colors hover:text-jci-gold">TikTok <ExternalLink size={13} /></a>
+            </div>
           </div>
 
           <div>
@@ -47,15 +51,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-gray-400">
                 <MapPin size={18} className="text-jci-gold shrink-0 mt-0.5" />
-                <span>[Official Address], Biratnagar, Nepal</span>
+                <span>Jaycees Marga, Biratnagar, Nepal</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-400">
                 <Phone size={18} className="text-jci-gold shrink-0" />
-                <span>[Phone Number]</span>
+                <a href="tel:+9779810492929" className="transition-colors hover:text-jci-gold">981-0492929</a>
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-400">
                 <Mail size={18} className="text-jci-gold shrink-0" />
-                <span>[Official Email]</span>
+                <a href="mailto:jcibiratnagar1973@gmail.com" className="transition-colors hover:text-jci-gold">jcibiratnagar1973@gmail.com</a>
               </li>
             </ul>
           </div>

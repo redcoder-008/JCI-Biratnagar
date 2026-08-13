@@ -17,7 +17,7 @@ const About: React.FC = () => {
           <SectionHeading title="Who We Are" />
           <div className="prose prose-lg max-w-none text-gray-600">
             <p>
-              JCI Biratnagar is a local chapter of Junior Chamber International (JCI), a worldwide federation of young leaders and entrepreneurs. Our members are dedicated to creating positive change in their communities through active participation in leadership development, community service, and international networking.
+              Established in 1973, JCI Biratnagar is a local chapter of Junior Chamber International (JCI), a worldwide federation of young leaders and entrepreneurs. Our members are dedicated to creating positive change in their communities through active participation in leadership development, community service, and international networking.
             </p>
             <p>
               Established with the core belief that we have the power to change our world for the better, JCI Biratnagar empowers young people aged 18 to 40 by providing them with the necessary tools, skills, and opportunities.

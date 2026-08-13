@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { ExternalLink, MapPin, Phone, Mail, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Official Address</h3>
-                  <p className="text-gray-600">[Official Address]<br/>Biratnagar, Nepal</p>
+                  <p className="text-gray-600">Jaycees Marga, Biratnagar, Nepal</p>
                 </div>
               </div>
               
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Phone Number</h3>
-                  <p className="text-gray-600">[Phone Number]</p>
+                  <a href="tel:+9779810492929" className="text-gray-600 transition-colors hover:text-jci-blue">981-0492929</a>
                 </div>
               </div>
               
@@ -63,18 +63,21 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Email Address</h3>
-                  <p className="text-gray-600">[Official Email]</p>
+                  <a href="mailto:jcibiratnagar1973@gmail.com" className="text-gray-600 transition-colors hover:text-jci-blue">jcibiratnagar1973@gmail.com</a>
                 </div>
               </div>
             </div>
             
             <div className="pt-8 mt-8 border-t border-gray-100">
               <h3 className="font-bold text-gray-900 mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((social) => (
-                  <a key={social} href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-jci-gold hover:text-white transition-colors">
-                    <span className="sr-only">{social}</span>
-                    <div className="w-5 h-5 bg-current opacity-80" style={{ maskImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\'%3E%3C/path%3E%3Cpath d=\'M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\'%3E%3C/path%3E%3C/svg%3E")', maskSize: 'cover' }}></div>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { name: 'Facebook', href: 'https://www.facebook.com/p/Biratnagar-Jaycees-61571983140311/' },
+                  { name: 'Instagram', href: 'https://www.instagram.com/biratnagar_junior_jaycees/?hl=en' },
+                  { name: 'TikTok', href: 'https://www.tiktok.com/@biratnagar.jaycee' },
+                ].map((social) => (
+                  <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700 transition-all hover:-translate-y-0.5 hover:bg-jci-gold hover:text-white">
+                    {social.name} <ExternalLink size={14} />
                   </a>
                 ))}
               </div>

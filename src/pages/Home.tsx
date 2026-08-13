@@ -12,7 +12,6 @@ import { newsData } from '../data/news';
 import { projectsData } from '../data/projects';
 import { galleryData } from '../data/gallery';
 import { ArrowRight, Users, Briefcase, Calendar as CalendarIcon, Award } from 'lucide-react';
-import avatarPlaceholder from '../assets/avatars/avatar-placeholder.svg';
 import activityPlaceholder from '../assets/activity-placeholder.svg';
 import logo from '../assets/branding/jci-biratnagar-logo.png';
 
@@ -82,7 +81,7 @@ const Home: React.FC = () => {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-jci-gold text-white p-6 rounded-xl shadow-lg hidden md:block">
                 <div className="text-3xl font-bold">Since</div>
-                <div className="text-xl font-medium">[Year]</div>
+                <div className="text-xl font-medium">1973</div>
               </div>
             </div>
           </div>
@@ -106,11 +105,11 @@ const Home: React.FC = () => {
         <div className="section-container">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
             <div className="w-64 h-64 shrink-0 rounded-full overflow-hidden border-4 border-white shadow-xl">
-              <img src={avatarPlaceholder} alt="President" className="w-full h-full object-cover" />
+              <img src="/images/members/Jc kabiraj Dahal President.png" alt="JC Kabiraj Dahal - President" className="w-full h-full object-cover object-top" />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-jci-blue mb-2">Message from the President</h2>
-              <div className="text-lg font-semibold text-jci-gold mb-6">Your Name - President, JCI Biratnagar</div>
+              <div className="text-lg font-semibold text-jci-gold mb-6">JC Kabiraj Dahal - President, JCI Biratnagar</div>
               <blockquote className="text-xl italic text-gray-600 border-l-4 border-jci-gold pl-6 py-2">
                 "[President message will be added soon. This section will feature an inspiring welcome message from the current President of JCI Biratnagar.]"
               </blockquote>

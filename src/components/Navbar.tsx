@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
       <div className="bg-jci-blue text-white text-sm">
         <div className="section-container flex items-center justify-between py-2">
           <span className="font-medium hidden sm:inline">Developing Leaders, Creating Impact</span>
-          <span className="flex items-center gap-2 font-medium"><Mail size={14} /> [Official Email]</span>
+          <a href="mailto:jcibiratnagar1973@gmail.com" className="flex items-center gap-2 font-medium transition-colors hover:text-jci-gold"><Mail size={14} /> jcibiratnagar1973@gmail.com</a>
         </div>
       </div>
       
