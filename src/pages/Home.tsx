@@ -103,7 +103,9 @@ const Home: React.FC = () => {
               <h2 className="text-3xl font-bold text-jci-blue mb-2">Message from the President</h2>
               <div className="text-lg font-semibold text-jci-gold mb-6">JC Kabiraj Dahal - President, JCI Biratnagar</div>
               <blockquote className="text-xl italic text-gray-600 border-l-4 border-jci-gold pl-6 py-2">
-                "[President message will be added soon. This section will feature an inspiring welcome message from the current President of JCI Biratnagar.]"
+                "It is an honor to serve as the President of JCI Biratnagar. Together with our dedicated members, we are committed to developing young leaders, serving our community, and turning ideas into meaningful action.
+
+Let us lead with purpose, serve with commitment, and create a lasting impact."
               </blockquote>
             </div>
           </div>
