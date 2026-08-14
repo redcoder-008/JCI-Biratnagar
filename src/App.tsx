@@ -11,11 +11,14 @@ import Membership from './pages/Membership';
 import Contact from './pages/Contact';
 import ContentDetail from './pages/ContentDetail';
 import VisionMission from './pages/VisionMission';
+import { AdminLayout, AdminLogin, Dashboard, ResourcePage, SettingsPage } from './pages/admin/AdminApp';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="admin/login" element={<AdminLogin />} />
+        <Route path="admin" element={<AdminLayout />}><Route index element={<Dashboard />} /><Route path="members" element={<ResourcePage resource="members" />} /><Route path="leadership" element={<ResourcePage resource="leadership" />} /><Route path="events" element={<ResourcePage resource="events" />} /><Route path="notices" element={<ResourcePage resource="notices" />} /><Route path="gallery" element={<ResourcePage resource="gallery" />} /><Route path="messages" element={<ResourcePage resource="messages" />} /><Route path="settings" element={<SettingsPage />} /></Route>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />

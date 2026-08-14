@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function admin() { return request.auth != null && exists(/databases/$(database)/documents/admins/$(request.auth.uid)) && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.active == true && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role == 'admin'; }
+    match /admins/{uid} { allow read: if request.auth != null && (request.auth.uid == uid || admin()); allow write: if admin(); }
+    match /members/{id} { allow read: if resource.data.status == 'active' || admin(); allow write: if admin(); }
+    match /events/{id} { allow read: if resource.data.status in ['upcoming', 'completed'] || admin(); allow write: if admin(); }
+    match /notices/{id} { allow read: if resource.data.published == true || admin(); allow write: if admin(); }
+    match /gallery/{id} { allow read: if true; allow write: if admin(); }
+    match /messages/{id} { allow create: if request.resource.data.keys().hasAll(['name', 'email', 'subject', 'message']) && request.resource.data.name is string && request.resource.data.email is string; allow read, update, delete: if admin(); }
+    match /settings/{id} { allow read: if true; allow write: if admin(); }
+  }
+}
