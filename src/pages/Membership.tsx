@@ -50,7 +50,7 @@ const Membership: React.FC = () => {
               {[
                 { step: '1', title: 'Learn About JCI', desc: 'Understand our mission, vision, and values.' },
                 { step: '2', title: 'Submit Application', desc: 'Fill out the membership application form.' },
-                { step: '3', title: 'Attend Orientation', desc: 'Participate in the new member orientation session.' },
+                { step: '3', title: 'Attend  Orientation', desc: 'Participate in the new member orientation session.' },
                 { step: '4', title: 'Become a Member', desc: 'Get officially inducted into JCI Biratnagar.' },
                 { step: '5', title: 'Start Participating', desc: 'Join projects, attend meetings, and start your journey.' },
               ].map((item, index) => (
