@@ -2,10 +2,10 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
     function admin() { return request.auth != null && firestore.exists(/databases/(default)/documents/admins/$(request.auth.uid)) && firestore.get(/databases/(default)/documents/admins/$(request.auth.uid)).data.active == true && firestore.get(/databases/(default)/documents/admins/$(request.auth.uid)).data.role == 'admin'; }
-    match /members/{allPaths=**} { allow read: if true; allow write: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); }
-    match /leadership/{allPaths=**} { allow read: if true; allow write: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); }
-    match /events/{allPaths=**} { allow read: if true; allow write: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); }
-    match /gallery/{allPaths=**} { allow read: if true; allow write: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); }
-    match /settings/{allPaths=**} { allow read: if true; allow write: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); }
+    match /members/{allPaths=**} { allow read: if true; allow create, update: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); allow delete: if admin(); }
+    match /leadership/{allPaths=**} { allow read: if true; allow create, update: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); allow delete: if admin(); }
+    match /events/{allPaths=**} { allow read: if true; allow create, update: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); allow delete: if admin(); }
+    match /gallery/{allPaths=**} { allow read: if true; allow create, update: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); allow delete: if admin(); }
+    match /settings/{allPaths=**} { allow read: if true; allow create, update: if admin() && request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); allow delete: if admin(); }
   }
 }

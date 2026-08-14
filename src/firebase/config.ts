@@ -1,7 +1,10 @@
-import { FirebaseApp, getApp, getApps, initializeApp } from 'firebase/app';
-import { Auth, getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth';
+import { getApp, getApps, initializeApp } from 'firebase/app';
+import type { FirebaseApp } from 'firebase/app';
+import { getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth';
+import type { Auth } from 'firebase/auth';
 import { Firestore, getFirestore } from 'firebase/firestore';
-import { FirebaseStorage, getStorage } from 'firebase/storage';
+import { getStorage } from 'firebase/storage';
+import type { FirebaseStorage } from 'firebase/storage';
 
 const config = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,

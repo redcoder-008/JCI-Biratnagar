@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import EventCard from '../components/EventCard';
 import { eventsData } from '../data/events';
+import { subscribeRecords } from '../lib/firebaseData';
+import { firebaseConfigured } from '../firebase/config';
 
 const Events: React.FC = () => {
   const [filter, setFilter] = useState<'All' | 'Upcoming' | 'Past'>('All');
+  const [events, setEvents] = useState(eventsData);
+  useEffect(() => {
+    if (!firebaseConfigured) return;
+    return subscribeRecords('events', (items) => setEvents(items.map((item) => ({ id: item.id, title: String(item.title || ''), date: String(item.date || ''), time: String(item.time || ''), location: String(item.location || ''), description: String(item.description || ''), organizer: 'JCI Biratnagar', image: String(item.imageUrl || ''), category: item.status === 'completed' ? 'Past' : 'Upcoming', slug: item.id }))), () => undefined);
+  }, []);
 
-  const filteredEvents = eventsData.filter(event => 
+  const filteredEvents = events.filter(event => 
     filter === 'All' ? true : event.category === filter
   );
 

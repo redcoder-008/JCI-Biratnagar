@@ -1,4 +1,16 @@
-# React + TypeScript + Vite
+# JCI Biratnagar
+
+This site uses Firebase Authentication, Cloud Firestore, and Cloud Storage. It has no application backend or MongoDB dependency.
+
+## Firebase setup
+
+1. Create a Firebase project and register a Web app.
+2. Enable **Email/Password** in Firebase Authentication.
+3. Copy `.env.example` to `.env` and provide the six `VITE_FIREBASE_*` values from the Firebase Web app configuration.
+4. Deploy [firestore.rules](firestore.rules) and [storage.rules](storage.rules) in the Firebase console (or with the Firebase CLI).
+5. Create the first admin in Firebase Authentication, then add `admins/{uid}` in Firestore with `email`, `role: "admin"`, and `active: true`. Use the Authentication user's UID as the document ID.
+
+Public pages fall back to the bundled sample content until Firebase is configured. Admin access is unavailable until the Firebase configuration and an active admin record exist.
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 

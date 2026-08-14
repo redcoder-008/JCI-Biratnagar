@@ -1,16 +1,16 @@
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, onSnapshot, orderBy, query, serverTimestamp, setDoc, Timestamp, updateDoc, where } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, onSnapshot, query, serverTimestamp, setDoc, Timestamp, updateDoc, where } from 'firebase/firestore';
 import { deleteObject, getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { db, storage } from '../firebase/config';
 
 export type RecordData = Record<string, unknown> & { id: string; createdAt?: Timestamp; updatedAt?: Timestamp };
-const records = (snap: Awaited<ReturnType<typeof getDocs>>) => snap.docs.map((item) => ({ id: item.id, ...item.data() }) as RecordData);
+const records = (snap: Awaited<ReturnType<typeof getDocs>>) => snap.docs.map((item) => ({ id: item.id, ...(item.data() as Record<string, unknown>) }) as RecordData);
 const publicFilters: Record<string, [string, unknown] | undefined> = { members: ['status', 'active'], leadership: ['status', 'active'], events: undefined, notices: ['published', true], gallery: undefined };
 
 export const listRecords = async (resource: string, admin = false) => {
   const collectionName = resource === 'leadership' ? 'members' : resource;
   const filter = !admin ? publicFilters[resource] : undefined;
   const constraints = filter ? [where(filter[0], '==', filter[1])] : [];
-  const snapshot = await getDocs(query(collection(db()), ...constraints));
+  const snapshot = await getDocs(query(collection(db(), collectionName), ...constraints));
   const items = records(snapshot);
   if (resource === 'leadership') return items.filter((item) => item.category === 'Leadership');
   return items;

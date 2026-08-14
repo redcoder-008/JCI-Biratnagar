@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { ExternalLink, MapPin, Phone, Mail, Send } from 'lucide-react';
+import { createRecord } from '../lib/firebaseData';
 
 const Contact: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('submitting');
-    // Simulate API call
-    setTimeout(() => {
+    const data = new FormData(e.currentTarget);
+    try {
+      await createRecord('messages', { name: String(data.get('name') || ''), email: String(data.get('email') || ''), phone: String(data.get('phone') || ''), subject: String(data.get('subject') || ''), message: String(data.get('message') || ''), read: false });
       setFormStatus('success');
-      // Reset after 3 seconds
+      e.currentTarget.reset();
       setTimeout(() => setFormStatus('idle'), 3000);
-    }, 1500);
+    } catch { setFormStatus('idle'); }
   };
 
   return (
@@ -102,6 +104,7 @@ const Contact: React.FC = () => {
                       <input 
                         type="text" 
                         id="name" 
+                        name="name"
                         required 
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-jci-blue focus:border-jci-blue outline-none transition-shadow"
                         placeholder="Your Name"
@@ -112,6 +115,7 @@ const Contact: React.FC = () => {
                       <input 
                         type="email" 
                         id="email" 
+                        name="email"
                         required 
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-jci-blue focus:border-jci-blue outline-none transition-shadow"
                         placeholder="your.email@example.com"
@@ -125,6 +129,7 @@ const Contact: React.FC = () => {
                       <input 
                         type="tel" 
                         id="phone" 
+                        name="phone"
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-jci-blue focus:border-jci-blue outline-none transition-shadow"
                         placeholder="Your Phone Number"
                       />
@@ -134,6 +139,7 @@ const Contact: React.FC = () => {
                       <input 
                         type="text" 
                         id="subject" 
+                        name="subject"
                         required
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-jci-blue focus:border-jci-blue outline-none transition-shadow"
                         placeholder="How can we help?"
@@ -145,6 +151,7 @@ const Contact: React.FC = () => {
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                     <textarea 
                       id="message" 
+                      name="message"
                       rows={5} 
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-jci-blue focus:border-jci-blue outline-none transition-shadow resize-none"

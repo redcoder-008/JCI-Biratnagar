@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { galleryData } from '../data/gallery';
+import { subscribeRecords } from '../lib/firebaseData';
+import { firebaseConfigured } from '../firebase/config';
 
 const Gallery: React.FC = () => {
   const [activeAlbum, setActiveAlbum] = useState<string | null>(null);
+  const [images, setImages] = useState<{ id: string; album: string; title: string; imageUrl: string }[]>([]);
+  useEffect(() => {
+    if (!firebaseConfigured) return;
+    return subscribeRecords('gallery', (items) => setImages(items.map((item) => ({ id: item.id, album: String(item.album || 'General'), title: String(item.title || 'Gallery image'), imageUrl: String(item.imageUrl || '') })).filter((item) => item.imageUrl)), () => undefined);
+  }, []);
+  const albums = useMemo(() => images.length ? Object.values(images.reduce<Record<string, { id: string; title: string; category: string; coverImage: string; images: string[] }>>((all, item) => { const key = item.album; all[key] ??= { id: key, title: key, category: key, coverImage: item.imageUrl, images: [] }; all[key].images.push(item.imageUrl); return all; }, {})) : galleryData, [images]);
 
-  const selectedAlbum = galleryData.find(album => album.id === activeAlbum);
+  const selectedAlbum = albums.find(album => album.id === activeAlbum);
 
   return (
     <div className="bg-white pb-20 min-h-screen">
@@ -22,7 +30,7 @@ const Gallery: React.FC = () => {
           <>
             <SectionHeading title="Albums" centered />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {galleryData.map(album => (
+              {albums.map(album => (
                 <div 
                   key={album.id} 
                   className="card group cursor-pointer"
