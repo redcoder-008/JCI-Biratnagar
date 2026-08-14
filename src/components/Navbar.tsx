@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
   const links = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
+    { name: 'Vision & Mission', path: '/vision-mission' },
     { name: 'Leadership', path: '/leadership' },
     { name: 'Events', path: '/events' },
     { name: 'Projects', path: '/projects' },

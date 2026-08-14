@@ -10,6 +10,7 @@ import Gallery from './pages/Gallery';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
 import ContentDetail from './pages/ContentDetail';
+import VisionMission from './pages/VisionMission';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="vision-mission" element={<VisionMission />} />
           <Route path="leadership" element={<Leadership />} />
           <Route path="events" element={<Events />} />
           <Route path="events/:slug" element={<ContentDetail kind="event" />} />
